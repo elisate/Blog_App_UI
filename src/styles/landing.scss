@@ -1,27 +1,52 @@
-.landingHolder
-{
-    padding-left: 7rem;
-    padding-right: 7rem;
-    padding-top: 7rem;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    .contentBlogs
-    {
-
-.landImage
-{
-  width: 20rem;
-        height: 12rem;;
-}
+.landingHolder {
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .contentBlogs {
+    .landImage {
+      width: 20rem;
+      height: 12rem;
     }
+    .readApp {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      align-items: center;
+      color: #ea7b30;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .readApp:hover {
+      cursor: pointer;
+      color: #4f1930;
+    }
+    .btitle {
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .bcontent {
+      width: 18rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.5rem;
+    }
+  }
 
-     .contentBlogs{
-        transition: transform 0.3s ease;
-        &:hover {
-          transform: translateY(-14px);
-          cursor: pointer;
-        }
-      }
+  .contentBlogs {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateY(-14px);
+      cursor: pointer;
+    }
+  }
 }
