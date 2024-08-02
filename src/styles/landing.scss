@@ -1,0 +1,27 @@
+.landingHolder
+{
+    padding-left: 7rem;
+    padding-right: 7rem;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .contentBlogs
+    {
+
+.landImage
+{
+  width: 20rem;
+        height: 12rem;;
+}
+    }
+
+     .contentBlogs{
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: translateY(-14px);
+          cursor: pointer;
+        }
+      }
+}

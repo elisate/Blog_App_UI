@@ -1,0 +1,26 @@
+.navbarHolder {
+  background-color: white;
+  color: black;
+  position: fixed;
+  z-index: 1000;
+  height: 4rem;
+  width: 100%;
+  .navbar {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      color: #ea7b30;
+      font-weight: bold;
+      .logoa {
+        color: #4f1930;
+        font-weight: bold;
+        border-top: solid 5px #111111;
+        border-radius: 12px 12px 0 0;
+      }
+    }
+  }
+}
