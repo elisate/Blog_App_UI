@@ -1,0 +1,35 @@
+.userContainer {
+  margin-left: 12rem;
+  padding-top: 5rem;
+  padding-right: 2rem;
+
+  .user-table-container {
+    padding: 20px;
+
+    .user-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+
+      th,
+      td {
+        border: none;
+        padding: 8px;
+        text-align: left;
+      }
+
+      tr {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+      }
+      tr :hover {
+        cursor: pointer;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        color: #ea7b30;
+      }
+    }
+  }
+}

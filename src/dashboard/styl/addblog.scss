@@ -1,0 +1,52 @@
+.postContainer
+{
+ margin-left: 12rem;
+  padding-top: 5rem;
+  padding-right: 2rem;
+  .headerform
+  {
+ font-size: 2rem;
+ font-weight: 450;
+  }
+
+  .postForm
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 1rem;
+    align-items: center;
+    .inptAdd
+  {
+    width: 30rem;
+    padding: 0.5rem;
+   border: solid 0.01px rgb(123, 120, 120);
+    border-radius: 2px;
+  }
+   .inptAddArea
+  {
+    padding: 0.5rem;
+    width: 30rem;
+    height: 7rem;
+    resize: none;
+    border: solid 0.01px rgb(123, 120, 120);
+    border-radius: 2px;
+  }
+  .addButton
+  {
+    background-color: #ea7b30;
+    color: white;
+    width: 31rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5PX;
+  }
+  .labels
+  {
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  }
+  
+  
+}
