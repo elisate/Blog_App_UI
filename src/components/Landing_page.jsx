@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/landing.scss";
 import { CgArrowLongRight } from "react-icons/cg";
 import axios from "axios";
-import CommentModal from "./CommentModal";
+import CommentModal from "./Commentmodal";
 
 function LandingPage() {
   const [blogs, setBlogs] = useState([]);
@@ -15,7 +15,6 @@ function LandingPage() {
         const response = await axios.get("http://localhost:3000/posts");
         console.log(response.data); // Log the data to check its structure
         setBlogs(response.data);
-        console.log("++++++++++",response.data)
       } catch (err) {
         console.log(err);
       }

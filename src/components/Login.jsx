@@ -18,9 +18,7 @@ function Login() {
     console.log(data);
     const { email, password } = data;
     try {
-      // const formData = new FormData();
-      // formData.append("email", email);
-      // formData.append("password", password);
+     
 
       const res = await axios.post("http://localhost:3000/auth/login", {
         email: email,

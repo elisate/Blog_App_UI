@@ -1,27 +1,40 @@
-import React from 'react';
-import '../styl/dashboard.scss';
-import { Link } from 'react-router-dom';
-import { useEffect,useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import { MdDeleteForever } from "react-icons/md";
 import { FiEdit3 } from "react-icons/fi";
+import "../styl/dashboard.scss";
 
 function Dashboard() {
+  const [blog, setBlog] = useState([]);
 
-  const[blog,setBlog]=useState([]);
+  useEffect(() => {
+    const getprogram = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/posts");
+        console.log(response.data);
+        setBlog(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getprogram();
+  }, []);
 
- useEffect(() => {
-   const getprogram = async () => {
-     try {
-       const response = await axios.get("http://localhost:3000/posts");
-       console.log(response.data);
-       setBlog(response.data);
-     } catch (err) {
-       console.log(err);
-     }
-   };
-   getprogram();
- }, []);
+  const deleteBlog = async (id) => {
+    const token = localStorage.getItem("userToken"); // Include the token if needed for authorization
+    try {
+      await axios.delete(`http://localhost:3000/posts/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`, // Include the token if needed for authorization
+        },
+      });
+      // Update the state to remove the deleted blog from the list
+      setBlog(blog.filter((item) => item.id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="contentHolder">
@@ -51,17 +64,17 @@ function Dashboard() {
             {blog.map((item, index) => (
               <tr key={index}>
                 <td>
-                  <img src={item.image} className="blog-image" />
+                  <img src={item.image} className="blog-image" alt="Blog" />
                 </td>
                 <td>{item.title}</td>
                 <td>{item.content}</td>
-                <td>
-                  <td>{item.authorname}</td>
-                </td>
-
+                <td>{item.authorname}</td>
                 <td>
                   <FiEdit3 className="edit" />
-                  <MdDeleteForever className="delete" />
+                  <MdDeleteForever
+                    className="delete"
+                    onClick={() => deleteBlog(item.id)}
+                  />
                 </td>
               </tr>
             ))}
@@ -72,4 +85,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard
+export default Dashboard;
