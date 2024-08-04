@@ -3,6 +3,8 @@ import '../styl/dashboard.scss';
 import { Link } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import axios from 'axios';
+import { MdDeleteForever } from "react-icons/md";
+import { FiEdit3 } from "react-icons/fi";
 
 function Dashboard() {
 
@@ -43,6 +45,7 @@ function Dashboard() {
               <th>Blog Content</th>
               <th>Authorname</th>
               <th>Comment</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -57,6 +60,7 @@ function Dashboard() {
                   <td>{item.authorname}</td>
                 </td>
                 <td>{item.comment}</td>
+                <td><MdDeleteForever/></td>
               </tr>
             ))}
           </tbody>
