@@ -19,15 +19,23 @@ function Sidebar() {
             {" "}
             <FaBlog className="icon" />
           </Link>
-       <Link to="/dashboard"><span className="text">Blogs</span></Link>   
+          <Link to="/dashboard">
+            <span className="text">Blogs</span>
+          </Link>
         </div>
         <div className="t1">
-         <Link to='/user'><FaUsers className="icon" /></Link> 
-         <Link to='/user'><span className="text">Users</span></Link>
+          <Link to="/user">
+            <FaUsers className="icon" />
+          </Link>
+          <Link to="/user">
+            <span className="text">Users</span>
+          </Link>
         </div>
         <div className="t3">
-          <FaRegCommentAlt className="icon" />
-          <span className="text">Comment</span>
+          <Link to="/comment">
+            <FaRegCommentAlt className="icon" />
+          </Link>
+        <Link to='/comment'><span className="text">Comment</span></Link>  
         </div>
       </div>
       <div className="endbutto">

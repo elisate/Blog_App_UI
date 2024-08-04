@@ -9,6 +9,7 @@ import DashboardLayout from './dashboard/pages/DashboardLayout';
 import Dashboard from './dashboard/pages/Dashboard';
 import AddBlogs from './dashboard/pages/AddBlogs';
 import User from './dashboard/pages/User';
+import Comments from './dashboard/pages/Comments';
 
 function App() {
  
@@ -28,6 +29,7 @@ function App() {
   <Route path='/dashboard' element={<Dashboard/>}/>
   <Route path='/addblog' element={<AddBlogs/>}/>
   <Route path='/user' element={<User/>}/>
+  <Route path='/comment' element={<Comments/>}/>
   </Route>
  </Routes>
  </BrowserRouter>

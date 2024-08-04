@@ -58,7 +58,7 @@ function Dashboard() {
                 <td>
                   <td>{item.authorname}</td>
                 </td>
-      
+
                 <td>
                   <FiEdit3 className="edit" />
                   <MdDeleteForever className="delete" />
