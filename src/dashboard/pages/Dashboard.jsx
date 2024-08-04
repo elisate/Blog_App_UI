@@ -44,7 +44,6 @@ function Dashboard() {
               <th>Blog Title</th>
               <th>Blog Content</th>
               <th>Authorname</th>
-              <th>Comment</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -59,8 +58,11 @@ function Dashboard() {
                 <td>
                   <td>{item.authorname}</td>
                 </td>
-                <td>{item.comment}</td>
-                <td><MdDeleteForever/></td>
+      
+                <td>
+                  <FiEdit3 className="edit" />
+                  <MdDeleteForever className="delete" />
+                </td>
               </tr>
             ))}
           </tbody>
