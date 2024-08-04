@@ -1,32 +1,32 @@
 import React from 'react';
 import '../styl/dashboard.scss';
 import { Link } from 'react-router-dom';
+import { useEffect,useState } from 'react';
+import axios from 'axios';
 
 function Dashboard() {
 
-   const blog = [
-     {
-       image: "/ro1.jpg",
-       title: "hello umuganura",
-       content: "welcome welcome dear blogs welcome welcome dear blogs",
-     },
-     {
-       image: "/ro1.jpg",
-       title: "hello umuganura",
-       content: "welcome welcome dear blogs welcome welcome dear blogs",
-     },
-     {
-       image: "/ro1.jpg",
-       title: "hello umuganura",
-       content: "welcome welcome dear blogs welcome welcome dear blogs",
-     },
-   ];
+  const[blog,setBlog]=useState([]);
+
+ useEffect(() => {
+   const getprogram = async () => {
+     try {
+       const response = await axios.get("http://localhost:3000/posts");
+       console.log(response.data);
+       setBlog(response.data);
+     } catch (err) {
+       console.log(err);
+     }
+   };
+   getprogram();
+ }, []);
+
   return (
     <div className="contentHolder">
       <div className="textA">
         <div className="blogHeader">All Blogs</div>
         <div className="txtB">
-          <span>3</span> <span>Blogs</span>
+          <span>{blog.length}</span> <span>Blogs</span>
         </div>
       </div>
       <div className="addtext">
@@ -41,6 +41,7 @@ function Dashboard() {
               <th>Images</th>
               <th>Blog Title</th>
               <th>Blog Content</th>
+              <th>Authorname</th>
               <th>Comment</th>
             </tr>
           </thead>
@@ -48,14 +49,13 @@ function Dashboard() {
             {blog.map((item, index) => (
               <tr key={index}>
                 <td>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="blog-image"
-                  />
+                  <img src={item.image} className="blog-image" />
                 </td>
                 <td>{item.title}</td>
                 <td>{item.content}</td>
+                <td>
+                  <td>{item.authorname}</td>
+                </td>
                 <td>{item.comment}</td>
               </tr>
             ))}
