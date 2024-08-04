@@ -17,25 +17,20 @@ function Login() {
   const onsubmit = async (data) => {
     console.log(data);
     const { email, password } = data;
-
     try {
-      // Send login request with JSON instead of FormData
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("password", password);
+
       const res = await axios.post(
         "http://localhost:3000/auth/login",
-        { email, password }, // Send data as JSON
-        {
-          headers: {
-            "Content-Type": "application/json", // This is correct
-          },
-        }
+        formData
       );
 
       console.log(res.data);
-      // Store only the token, not the entire response
-      localStorage.setItem(
-        "userToken",
-        JSON.stringify({ token: res.data.token })
-      ); // Ensure you are saving the token correctly
+      // Store only the access token
+      localStorage.setItem("userToken", res.data.access_token);
+     console.log("Stored Token:", localStorage.getItem("userToken"));
       Notify.success("Login successful!");
 
       if (res.data.user.role === "admin") {

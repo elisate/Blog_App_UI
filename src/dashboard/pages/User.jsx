@@ -1,41 +1,25 @@
-import React from 'react';
-import '../styl/user.scss';
-import { useState,useEffect } from 'react';
-import axios from 'axios';
+import React from "react";
+import "../styl/user.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function User() {
-    const users = [
-      {
-        fullNames: "Dushimiyimana Elisa",
-        userEmail: "dushimiyimanaelisa@gmail.com",
-      },
-      {
-        fullNames: "Dushimiyimana Elisa",
-        userEmail: "dushimiyimanaelisa@gmail.com",
-      },
-      {
-        fullNames: "Dushimiyimana Elisa",
-        userEmail: "dushimiyimanaelisa@gmail.com",
-      },
-    ];
+  const [user, setUser] = useState([]);
 
-
-     const [user, setUser] = useState([]);
-
-     useEffect(() => {
-       const getprogram = async () => {
-         try {
-           const response = await axios.get(
-             "http://localhost:3000/auth/getAllUsers"
-           );
-           console.log(response.data);
-           setUser(response.data.data);
-         } catch (err) {
-           console.log(err);
-         }
-       };
-       getprogram();
-     }, []);
+  useEffect(() => {
+    const getprogram = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:3000/auth/getAllUsers"
+        );
+        console.log(response.data);
+        setUser(response.data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getprogram();
+  }, []);
   return (
     <div className="userContainer">
       <div className="user-table-container">
@@ -62,4 +46,4 @@ function User() {
   );
 }
 
-export default User
+export default User;
