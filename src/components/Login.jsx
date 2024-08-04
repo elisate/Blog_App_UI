@@ -18,19 +18,18 @@ function Login() {
     console.log(data);
     const { email, password } = data;
     try {
-      const formData = new FormData();
-      formData.append("email", email);
-      formData.append("password", password);
+      // const formData = new FormData();
+      // formData.append("email", email);
+      // formData.append("password", password);
 
-      const res = await axios.post(
-        "http://localhost:3000/auth/login",
-        formData
-      );
+      const res = await axios.post("http://localhost:3000/auth/login", {
+        email: email,
+        password: password,
+      });
 
       console.log(res.data);
       // Store only the access token
       localStorage.setItem("userToken", res.data.access_token);
-     console.log("Stored Token:", localStorage.getItem("userToken"));
       Notify.success("Login successful!");
 
       if (res.data.user.role === "admin") {
