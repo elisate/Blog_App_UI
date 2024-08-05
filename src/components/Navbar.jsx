@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/navbar.scss'
 import '../styles/button.scss';
 import { Link } from 'react-router-dom';
+import Status_loged from './Status_loged';
 function Navbar() {
   return (
     <div className="navbarHolder">
@@ -12,9 +13,10 @@ function Navbar() {
           </h2>
         </div>
         <div>
-          <Link to="/login">
-            <button className="buttonFix">LOGIN</button>
-          </Link>
+          
+            
+            <Status_loged/>
+         
         </div>
       </div>
     </div>

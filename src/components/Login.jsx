@@ -18,16 +18,16 @@ function Login() {
     console.log(data);
     const { email, password } = data;
     try {
-     
-
       const res = await axios.post("http://localhost:3000/auth/login", {
         email: email,
         password: password,
       });
 
       console.log(res.data);
-      // Store only the access token
-      localStorage.setItem("userToken", res.data.access_token);
+
+      // Store the whole response data (access_token and user info)
+      localStorage.setItem("userToken", JSON.stringify(res.data));
+
       Notify.success("Login successful!");
 
       if (res.data.user.role === "admin") {
