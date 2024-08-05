@@ -59,7 +59,7 @@ function Profile({ handleprofile }) {
             </Link>
           </div>
           <div className="contactp1" onClick={handleprofile}>
-            <Link to="/contact">Post Your Contact</Link>
+            Post Your Contact
           </div>
         </div>
         <div className="prof-user4">
