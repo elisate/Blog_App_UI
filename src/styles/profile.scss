@@ -83,26 +83,7 @@
     color: black;
     text-decoration: none;
   }
-  .prof-user2 a :hover {
-    color: #ea7b30;
-  }
-  .texoc a:hover {
-    color: #ea7b30;
-    text-decoration: underline;
-  }
-  .contacp a:hover {
-    color: #ea7b30;
-  }
-  .contacp a {
-    color: black;
-  }
-  .contactp1 a {
-    color: black;
-  }
-  .contactp1 a:hover {
-    color: #ea7b30;
-    text-decoration: underline;
-  }
+
 
   .prof-user3 {
     display: flex;
@@ -147,31 +128,3 @@
    }
 }
 
-@media screen and (max-width: 768px) {
-
-  .profile-container {
-    height: 10rem;
-    background-color: white;
-    color: black;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 2rem;
-    height: fit-content;
-    .prof-a {
-    display: flex;
-    flex-direction: row;
-   justify-content: space-between;
-
-    .prof-text {
-      font-size: 1.2rem;
-    }
-
-    .close-profile {
-      color: #ea7b30;
-      font-size: 2rem;
-    }
-  }
-  }
-  
-}
