@@ -18,9 +18,6 @@ const Status_loged = () => {
   let email = userToken?.user?.email;
   let role = userToken?.user?.role;
 
-  console.log("wwww", role); // Debugging output
-  console.log("nnnnnnnnn", username); // Debugging output
-
   function Logout() {
     localStorage.removeItem("userToken");
     window.location.href = "/";
