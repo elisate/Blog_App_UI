@@ -1,0 +1,177 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: right;
+  padding-top: 3.5rem;
+
+  .profile-container {
+    height: 10rem;
+    background-color: white;
+    color: black;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    height: fit-content;
+  }
+  .prof-a {
+    display: flex;
+    flex-direction: row;
+    gap: 12rem;
+    border-bottom: solid 1px gray;
+    .prof-text {
+      font-size: 1.5rem;
+    }
+
+    .close-profile {
+      color:  #ea7b30;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+      font-size: 2rem;
+    }
+  }
+  .icon-profile {
+    font-size: 1.4rem;
+  }
+  .icon-profile :hover {
+    color: #ea7b30;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  }
+  .prof-user1 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 2rem;
+    text-decoration: none;
+    .user-email {
+      color:  #ea7b30;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;;
+    }
+  }
+  .prof-user2 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  .prof-user2 a {
+    color: black;
+    text-decoration: none;
+  }
+  .prof-user2 a :hover {
+    color: #ea7b30;
+  }
+  .texoc a:hover {
+    color: #ea7b30;
+    text-decoration: underline;
+  }
+  .contacp a:hover {
+    color: #ea7b30;
+  }
+  .contacp a {
+    color: black;
+  }
+  .contactp1 a {
+    color: black;
+  }
+  .contactp1 a:hover {
+    color: #ea7b30;
+    text-decoration: underline;
+  }
+
+  .prof-user3 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 1rem;
+    text-decoration: none;
+  }
+  .prof-user3 :link {
+    text-decoration: none;
+    color: black;
+  }
+  .prof-user4 {
+    .quate1 {
+      background-color:#ea7b30 ;
+      height: 2rem;
+      width: 7rem;
+      font-weight: bold;
+      color: white;
+    }
+    .quate1:hover {
+       background-color: #ea7b30 ;
+    }
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  .quateprofile {
+     background-color: #ea7b30;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  }
+   .quateprofile:hover{
+    background-color:#4f1930;
+   }
+}
+
+@media screen and (max-width: 768px) {
+
+  .profile-container {
+    height: 10rem;
+    background-color: white;
+    color: black;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    height: fit-content;
+    .prof-a {
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+
+    .prof-text {
+      font-size: 1.2rem;
+    }
+
+    .close-profile {
+      color: #ea7b30;
+      font-size: 2rem;
+    }
+  }
+  }
+  
+}

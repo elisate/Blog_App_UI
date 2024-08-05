@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { FaRegCircleUser } from "react-icons/fa6";
 import "../styles/status_loged.scss";
+import Profile from "./Profile";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const Status_loged = () => {
   const [profile, setProfile] = useState(false);
 
-  const handleProfile = () => {
+  const handleprofile = () => {
     setProfile(!profile);
   };
 
@@ -40,15 +41,16 @@ const Status_loged = () => {
           <div className="text-status">
             <FaRegCircleUser
               className="update-profile"
-              onClick={handleProfile}
+              onClick={handleprofile}
             />
-            <div className="email" onClick={handleProfile}>
+            <div className="email" onClick={handleprofile}>
               {username || "Guest"}{" "}
               {/* Show "Guest" if username is undefined */}
             </div>
             <RiArrowDropDownLine className="drop-down-status" />
           </div>
         </div>
+        {profile && <Profile handleprofile={handleprofile} />}
       </div>
     );
   }
