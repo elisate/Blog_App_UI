@@ -7,7 +7,7 @@ import "../styl/dashboard.scss";
 
 function Dashboard() {
   const [blog, setBlog] = useState([]);
-
+   
   useEffect(() => {
     const getprogram = async () => {
       try {
@@ -22,11 +22,13 @@ function Dashboard() {
   }, []);
 
   const deleteBlog = async (id) => {
-    const token = localStorage.getItem("userToken"); // Include the token if needed for authorization
+     const userToken = JSON.parse(localStorage.getItem("userToken"));
+     let token = userToken?.access_token;
+   
     try {
       await axios.delete(`http://localhost:3000/posts/${id}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Include the token if needed for authorization
+          Authorization: `Bearer ${token}`, 
         },
       });
       // Update the state to remove the deleted blog from the list

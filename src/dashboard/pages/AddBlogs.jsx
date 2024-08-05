@@ -2,6 +2,7 @@ import React from "react";
 import "../styl/addblog.scss";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { Notify } from "notiflix"; // Import Notify
 
 function AddBlogs() {
   const {
@@ -12,8 +13,9 @@ function AddBlogs() {
   console.log(errors);
 
   const onsubmit = async (data) => {
-    const token = localStorage.getItem("userToken");
-
+   
+ const userToken  = JSON.parse(localStorage.getItem("userToken"));
+ let token = userToken?.access_token;
     console.log(data);
     const { image, title, content, authorname } = data;
     try {
@@ -31,8 +33,12 @@ function AddBlogs() {
       });
 
       console.log(res.data); // Optional: log response data
+      Notify.success("Blog posted successfully!"); // Notify success
+
+      // Optionally, you can reset the form or redirect the user here
     } catch (error) {
       console.log(error);
+      Notify.failure("Failed to post blog. Please try again."); // Notify failure
     }
   };
 

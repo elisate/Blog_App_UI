@@ -4,8 +4,8 @@ import axios from "axios";
 
 const CommentModal = ({ handleModal, postId }) => {
   const [comment, setComment] = useState("");
-  const token = localStorage.getItem("userToken");
-  console.log("Token being sent:", token);
+  const userToken = JSON.parse(localStorage.getItem("userToken"));
+  let token = userToken?.access_token;
   
 
   const handleSubmit = async (e) => {
