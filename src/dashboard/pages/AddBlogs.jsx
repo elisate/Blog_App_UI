@@ -40,50 +40,55 @@ function AddBlogs() {
     <div className="postContainer">
       <div className="headerform">Add Blog</div>
       <form className="postForm" onSubmit={handleSubmit(onsubmit)}>
-        <div>
-          <label className="labels">Images</label>
-          <br />
-          <input
-            type="file"
-            placeholder="choose image"
-            className="inptAd"
-            name="image"
-            {...register("image", { required: true })}
-          />
+        <div className="formfix">
+          <div className="iputcontainer">
+            <div>
+              <label className="labels">Images</label>
+              <br />
+              <input
+                type="file"
+                placeholder="choose image"
+                className="inptAdd"
+                name="image"
+                {...register("image", { required: true })}
+              />
+            </div>
+            <div>
+              <label className="labels">Blog Title</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Enter the blog title"
+                className="inptAdd"
+                name="title"
+                {...register("title", { required: true })} // Register this input
+              />
+            </div>
+            <div>
+              <label className="labels">Blog Author</label>{" "}
+              {/* Corrected label */}
+              <br />
+              <input
+                type="text"
+                placeholder="Enter the blog Author"
+                className="inptAdd"
+                name="authorname"
+                {...register("authorname", { required: true })}
+              />
+            </div>
+          </div>
+          <div>
+            <label className="labels">Blog Content</label>
+            <br />
+            <textarea
+              placeholder="Enter Blog Content"
+              className="inptAddArea"
+              name="content"
+              {...register("content", { required: true })}
+            />
+          </div>
         </div>
-        <div>
-          <label className="labels">Blog Title</label>
-          <br />
-          <input
-            type="text"
-            placeholder="Enter the blog title"
-            className="inptAdd"
-            name="title"
-            {...register("title", { required: true })} // Register this input
-          />
-        </div>
-        <div>
-          <label className="labels">Blog Author</label> {/* Corrected label */}
-          <br />
-          <input
-            type="text"
-            placeholder="Enter the blog Author"
-            className="inptAdd"
-            name="authorname"
-            {...register("authorname", { required: true })}
-          />
-        </div>
-        <div>
-          <label className="labels">Blog Content</label>
-          <br />
-          <textarea
-            placeholder="Enter Blog Content"
-            className="inptAddArea"
-            name="content"
-            {...register("content", { required: true })}
-          />
-        </div>
-        <div>
+        <div className="submit">
           <button className="addButton">Add blog</button>
         </div>
       </form>
