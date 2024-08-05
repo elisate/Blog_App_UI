@@ -52,7 +52,7 @@ function Footer() {
           </div>
           <div className="fa3">
             <MdOutlineEmail className="fa1Icon" />
-            futurefocusrwanda@gmail.com
+            dushimiyimanaelisa@gmail.com
           </div>
           <div className="fa3">
             <ImLocation2 className="fa1Icon" /> Kigali-Gasabo KG33 AVE

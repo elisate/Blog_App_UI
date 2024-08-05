@@ -42,6 +42,10 @@ function LandingPage() {
           </div>
           <div className="btitle">{e.title}</div>
           <div className="bcontent">{e.content}</div>
+          <div className="Author">
+            <span className="wtr">Author</span>{" "}
+            <span className="wtr">{e.authorname}</span>
+          </div>
           <div className="readApp" onClick={() => handleModal(e.id)}>
             {" "}
             {/* Pass post ID to handleModal */}

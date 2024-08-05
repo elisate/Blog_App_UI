@@ -49,5 +49,15 @@
       transform: translateY(-14px);
       cursor: pointer;
     }
+    .Author{
+      
+      padding-left: 1rem;
+      padding-top: 1rem;
+      .wtr
+      {
+        border-left:solid 2px #ea7b30;
+        padding-left: 0.2rem;
+      }
+    }
   }
 }

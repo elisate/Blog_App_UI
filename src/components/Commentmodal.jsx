@@ -41,9 +41,11 @@ const CommentModal = ({ handleModal, postId }) => {
             onChange={(e) => setComment(e.target.value)}
             required
           />
-          <button type="submit">Submit</button>
+          <div className="btt">
+            <button type="submit" className="button1">Submit</button>
+            <button  className="button2" onClick={handleModal}>Close</button>
+          </div>
         </form>
-        <button onClick={handleModal}>Close</button>
       </div>
     </div>
   );
