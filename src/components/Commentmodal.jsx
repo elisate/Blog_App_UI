@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import "../styles/modal.scss";
 import axios from "axios";
+import { Notify } from "notiflix";
 
 const CommentModal = ({ handleModal, postId }) => {
   const [comment, setComment] = useState("");
   const userToken = JSON.parse(localStorage.getItem("userToken"));
   let token = userToken?.access_token;
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!token) {
-      alert("No valid token found. Please log in again.");
+      Notify.failure("Please log in to submit a comment.");
       return;
     }
 
@@ -22,12 +22,12 @@ const CommentModal = ({ handleModal, postId }) => {
         { content: comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      alert("Comment submitted!");
+      Notify.success("Comment submitted successfully!");
       setComment(""); // Clear the textarea
       handleModal(); // Close the modal after submission
     } catch (error) {
       console.error("Error submitting comment:", error);
-      alert("Failed to submit comment. Please try again.");
+      Notify.failure("Failed to submit comment. Please try again.");
     }
   };
 
@@ -42,8 +42,12 @@ const CommentModal = ({ handleModal, postId }) => {
             required
           />
           <div className="btt">
-            <button type="submit" className="button1">Submit</button>
-            <button  className="button2" onClick={handleModal}>Close</button>
+            <button type="submit" className="button1">
+              Submit
+            </button>
+            <button type="button" className="button2" onClick={handleModal}>
+              Close
+            </button>
           </div>
         </form>
       </div>
