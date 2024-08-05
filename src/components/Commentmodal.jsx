@@ -23,8 +23,8 @@ const CommentModal = ({ handleModal, postId }) => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       Notify.success("Comment submitted successfully!");
-      setComment(""); // Clear the textarea
-      handleModal(); // Close the modal after submission
+      setComment(""); 
+      handleModal(); 
     } catch (error) {
       console.error("Error submitting comment:", error);
       Notify.failure("Failed to submit comment. Please try again.");
