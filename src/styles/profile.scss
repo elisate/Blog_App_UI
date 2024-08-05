@@ -18,7 +18,7 @@
     .prof-a {
       display: flex;
       flex-direction: row;
-      gap: 12rem;
+      gap: 8rem;
       border-bottom: solid 1px gray;
 
       .prof-text {
@@ -125,6 +125,17 @@
       &:hover {
         background-color: #4f1930;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-container {
+    padding: 0.5rem;
+    width: 21rem;
+
+    .prof-text {
+      font-size: 0.9rem;
     }
   }
 }
