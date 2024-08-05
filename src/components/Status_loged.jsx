@@ -15,8 +15,8 @@ const Status_loged = () => {
   let userToken = JSON.parse(localStorage.getItem("userToken"));
   let token = userToken?.access_token;
   let username = userToken?.user?.fullNames;
-  let email = userToken?.user?.email; 
-  let role = userToken?.user?.role; 
+  let email = userToken?.user?.email;
+  let role = userToken?.user?.role;
 
   console.log("wwww", role); // Debugging output
   console.log("nnnnnnnnn", username); // Debugging output
@@ -45,9 +45,11 @@ const Status_loged = () => {
             />
             <div className="email" onClick={handleprofile}>
               {username || "Guest"}{" "}
-              {/* Show "Guest" if username is undefined */}
             </div>
-            <RiArrowDropDownLine className="drop-down-status" />
+            <RiArrowDropDownLine
+              className="drop-down-status"
+              onClick={handleprofile}
+            />
           </div>
         </div>
         {profile && <Profile handleprofile={handleprofile} />}

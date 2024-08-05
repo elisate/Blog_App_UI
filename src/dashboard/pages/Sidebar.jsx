@@ -6,6 +6,11 @@ import { FaRegCommentAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 function Sidebar() {
+
+  function Logout() {
+    localStorage.removeItem("userToken");
+    window.location.href = "/";
+  }
   return (
     <div className="sidbarContainer">
       <div className="startText">
@@ -35,11 +40,18 @@ function Sidebar() {
           <Link to="/comment">
             <FaRegCommentAlt className="icon" />
           </Link>
-        <Link to='/comment'><span className="text">Comment</span></Link>  
+          <Link to="/comment">
+            <span className="text">Comment</span>
+          </Link>
         </div>
       </div>
       <div className="endbutto">
-      <Link to='/landing'> <button className="logout">Logout</button></Link> 
+       
+         
+          <button className="logout" onClick={Logout}>
+            Logout
+          </button>
+     
       </div>
     </div>
   );
