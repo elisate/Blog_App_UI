@@ -39,7 +39,7 @@ function Sidebar() {
         </div>
       </div>
       <div className="endbutto">
-        <button className="logout">Logout</button>
+      <Link to='/login'> <button className="logout">Logout</button></Link> 
       </div>
     </div>
   );
