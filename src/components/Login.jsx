@@ -25,7 +25,6 @@ function Login() {
 
       console.log(res.data);
 
-      // Store the whole response data (access_token and user info)
       localStorage.setItem("userToken", JSON.stringify(res.data));
 
       Notify.success("Login successful!");
