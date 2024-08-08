@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styl/Sidebar.scss';
+import '../styl/sidebar.scss';
 import { FaBlog,FaUsers } from "react-icons/fa6";
 
 import { FaRegCommentAlt } from "react-icons/fa";
